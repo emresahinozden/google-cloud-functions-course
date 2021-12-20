@@ -7,7 +7,7 @@ or create it from [Google Cloud Platform Console](https://console.cloud.google.c
 
 ## Creating a virtual environment
 
-First we install ` python - venv `
+First we install ` python - virtualenv `
 ```
 pip install virtualenv
 ```
@@ -24,4 +24,16 @@ We install the requirements:
 ```
 pip install -r .\requirements.txt
 ```
+
+## Deploying our functions
+First, we have to set our project ID with the following 
+command:
+```
+gcloud config set project [YOUR_PROJECT_ID]
+```
+Then we deploy our function with this command:
+```
+gcloud functions deploy [FUNCTION_NAME] --runtime python37 --trigger-http
+```
+
 
